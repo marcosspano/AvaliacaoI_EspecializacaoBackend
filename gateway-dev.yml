@@ -12,3 +12,7 @@ spring:
           uri: lb://CATALOG-SERVICE
           predicates:
             - Path=/catalog/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-response-header, custom-user-response-header
+          
