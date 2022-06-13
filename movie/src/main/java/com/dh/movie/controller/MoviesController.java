@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/movies")
 public class MoviesController {
@@ -22,7 +24,7 @@ public class MoviesController {
     }
 
     @GetMapping("/{genre}")
-    public Movies findByGenre(@PathVariable String genre) {
+    public List<Movies> findByGenre(@PathVariable String genre) {
         return service.findByGenre(genre);
     }
 

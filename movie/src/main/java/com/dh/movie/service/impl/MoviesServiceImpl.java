@@ -7,6 +7,8 @@ import com.dh.movie.service.MoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MoviesServiceImpl implements MoviesService {
 
@@ -23,9 +25,8 @@ public class MoviesServiceImpl implements MoviesService {
     }
 
     @Override
-    public Movies findByGenre(String genre) {
-        var movie = repository.findByGenre(genre);
-        return movie;
+    public List<Movies> findByGenre(String genre) {
+        return repository.findByGenre(genre);
     }
 
 }
